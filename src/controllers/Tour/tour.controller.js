@@ -34,20 +34,13 @@ module.exports = {
                 sortOrder = -1; 
             }
             
-            // if(tu && den) {
-            //     let giatri3 = parseFloat(tu);
-            //     let giatri4 = parseFloat(den);
-            //     console.log("giatri3: ", giatri3);
-            //     console.log("giatri4: ", giatri4);
-            //     // Lọc sản phẩm có giá trong sizes[0].price nằm trong khoảng giatri1 và giatri2
-            //     if (giatri3 && giatri4) {
-            //         query.sizes = {
-            //             $elemMatch: {
-            //                 price: { $gte: giatri3, $lte: giatri4 }
-            //             }
-            //         };
-            //     }
-            // }   
+            if (tu && den) {
+                const giatriTu = parseFloat(tu);
+                const giatriDen = parseFloat(den);
+            
+                query.giaTour = { $gte: giatriTu, $lte: giatriDen };
+            }
+              
                                    
             let sp = await TourDuLich.find(query)
                 .skip(skip)
