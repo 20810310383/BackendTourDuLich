@@ -24,6 +24,8 @@ connectDB();
 const allowedOrigins = [
     'http://localhost:3100', // Local development - admin
     'http://localhost:3101', // Local development
+    'https://pageadmin.vercel.app',
+    'https://tourdulich.vercel.app'
    
 ];
 
